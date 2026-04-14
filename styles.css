@@ -1,0 +1,149 @@
+/* Lincoln Access Screen Reader — placeholder styles (high contrast, readable type) */
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --muted: #4a4a4a;
+  --accent: #1e4d6b;
+  --accent-hover: #163a52;
+  --border: #d4cfc4;
+  --focus: #0b57d0;
+  --space: clamp(1rem, 3vw, 1.75rem);
+  --radius: 12px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--accent);
+  text-decoration: underline;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+.skip-link:focus {
+  left: var(--space);
+  top: var(--space);
+}
+
+.site-header {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 8vw, 4rem) var(--space) var(--space);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 var(--space) clamp(3rem, 10vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.card--muted {
+  background: #f0ebe2;
+  border-color: #c9c2b4;
+}
+
+h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+  color: var(--accent);
+}
+
+p {
+  margin: 0 0 0.85rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+.site-footer {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 var(--space) 2.5rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
